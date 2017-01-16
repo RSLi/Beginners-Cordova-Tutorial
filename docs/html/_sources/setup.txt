@@ -108,8 +108,8 @@ Try to open the my-todo-app/www folder in your IDE/Text Editor. If your text edi
 
     `Customize your Atom <https://scotch.io/bar-talk/best-of-atom-features-plugins-acting-like-sublime-text>`_
 
-(Optional) Testing
-==================
+(Recommended) Testing
+=====================
 At this time you might be excited enough to test whether your app works. If you don't want to wait till the end to test your project, or if you want to test your app step by step through your development, read :ref:`Testing in Browser <label-test>`.
 
 Delete Sample Files

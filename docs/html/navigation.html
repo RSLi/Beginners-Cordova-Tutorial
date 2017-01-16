@@ -85,7 +85,12 @@
 <li class="toctree-l1"><a class="reference internal" href="intro.html">Project Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html">Environment Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="structure.html">Designing the Structure</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Navigation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Navigation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#toolbar">toolbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#menu-button">Menu Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#challenge-1-creating-about-page">Challenge 1: Creating About Page</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="models.html">Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="views.html">Views</a></li>
 <li class="toctree-l1"><a class="reference internal" href="controllers.html">Controllers</a></li>
@@ -135,6 +140,178 @@
             
   <div class="section" id="navigation">
 <h1>Navigation<a class="headerlink" href="#navigation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="toolbar">
+<h2>toolbar<a class="headerlink" href="#toolbar" title="Permalink to this headline">¶</a></h2>
+<p>Each page of the app has a toolbar showing a title and a menu button where you can open the splitter menu on the left.</p>
+<p>Here&#8217;s the sample of toolbar in <strong>main.html</strong>.</p>
+<div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ons-page</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mainPage&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ons-toolbar</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;left&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">ons-toolbar-button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;btn-splitter-toggle&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">ons-icon</span> <span class="na">icon</span><span class="o">=</span><span class="s">&quot;ion-navicon, material:md-menu&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;32px, material:24px&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">ons-icon</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">ons-toolbar-button</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;center&quot;</span><span class="p">&gt;</span>TODO<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;right&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ons-toolbar</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ons-page</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>&lt;ons-toolbar&gt; should be an immediate child of &lt;ons-page&gt; and is placed before everything else.</p>
+<p>Within the toolbar, three &lt;div&gt; elements with class attribute specifies their position in the toolbar. In the &#8220;left&#8221; section there&#8217;s &lt;ons-toolbar-button&gt; that shows an icon for the menu. In the center section there&#8217;s the title for the page.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you want to change the icon ion-navicon(on iOS) or md-menu(on Android) to something else, you can search on <a class="reference external" href="http://ionicons.com/">ionicons (iOS)</a> or <a class="reference external" href="https://zavoloklom.github.io/material-design-iconic-font/cheatsheet.html">Material Design Iconic Font (Android)</a> , both icon sets are included with onsenui by default.</p>
+</div>
+<p><strong>history.html</strong> is another page that can be accessed from the splitter menu, thus it is quite similar.</p>
+<div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ons-page</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;historyPage&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ons-toolbar</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;left&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">ons-toolbar-button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;btn-splitter-toggle&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">ons-icon</span> <span class="na">icon</span><span class="o">=</span><span class="s">&quot;ion-navicon, material:md-menu&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;32px, material:24px&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">ons-icon</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">ons-toolbar-button</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;center&quot;</span><span class="p">&gt;</span>History<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;right&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ons-toolbar</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ons-page</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>menu.html</strong></p>
+<div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ons-page</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;menuPage&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ons-list</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;menu-option-list&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ons-list-header</span><span class="p">&gt;</span>Menu<span class="p">&lt;/</span><span class="nt">ons-list-header</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ons-list-item</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;menu-main&quot;</span> <span class="na">tappable</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;left&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">ons-icon</span> <span class="na">icon</span><span class="o">=</span><span class="s">&quot;md-home&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">ons-icon</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;center&quot;</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ons-list-item</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ons-list-item</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;menu-history&quot;</span> <span class="na">tappable</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;left&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">ons-icon</span> <span class="na">icon</span><span class="o">=</span><span class="s">&quot;md-timer&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">ons-icon</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;center&quot;</span><span class="p">&gt;</span>History<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ons-list-item</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">ons-list</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ons-page</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Within the menu we also place two buttons, targeting to the main page and the history page.</p>
+</div>
+<div class="section" id="menu-button">
+<h2>Menu Button<a class="headerlink" href="#menu-button" title="Permalink to this headline">¶</a></h2>
+<p>Right now, you can swipe right to open the menu, but the menu button on the tool bar doesn&#8217;t work, because nothing has specified its functionality. Let&#8217;s try adding something to the controller to make it work.</p>
+<p>controllers.js</p>
+<div class="highlight-js"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">todoApp</span><span class="p">.</span><span class="nx">controllers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">//bind button id to it&#39;s corresponding page</span>
+    <span class="s2">&quot;menuPage&quot;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">page</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">function</span> <span class="nx">bindPage</span><span class="p">(</span><span class="nx">buttonId</span><span class="p">,</span> <span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">buttonId</span><span class="p">).</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">content</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">);</span>
+                <span class="kd">var</span> <span class="nx">menu</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;menu&#39;</span><span class="p">);</span>
+                <span class="nx">content</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="nx">target</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">menu</span><span class="p">.</span><span class="nx">close</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">menu</span><span class="p">));</span>
+            <span class="p">};</span>
+        <span class="p">}</span>
+
+        <span class="nx">bindPage</span><span class="p">(</span><span class="s1">&#39;menu-main&#39;</span><span class="p">,</span> <span class="s1">&#39;html/main.html&#39;</span><span class="p">);</span>
+        <span class="nx">bindPage</span><span class="p">(</span><span class="s1">&#39;menu-history&#39;</span><span class="p">,</span> <span class="s1">&#39;html/history.html&#39;</span><span class="p">);</span>
+    <span class="p">},</span>
+
+    <span class="s2">&quot;mainPage&quot;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">page</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">page</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#btn-splitter-toggle&#39;</span><span class="p">).</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#app-splitter&#39;</span><span class="p">).</span><span class="nx">left</span><span class="p">.</span><span class="nx">toggle</span><span class="p">();</span>
+        <span class="p">};</span>
+    <span class="p">},</span>
+
+    <span class="s2">&quot;historyPage&quot;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">page</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">page</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#btn-splitter-toggle&#39;</span><span class="p">).</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;#app-splitter&#39;</span><span class="p">).</span><span class="nx">left</span><span class="p">.</span><span class="nx">toggle</span><span class="p">();</span>
+        <span class="p">};</span>
+    <span class="p">},</span>
+
+    <span class="s2">&quot;createPage&quot;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">page</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+
+<span class="p">};</span>
+</pre></div>
+</td></tr></table></div>
+<p>Button functionalities are specified in the controllers. In this step we select #btn-splitter-toggle (# means id) and add an onclick listener function to it in both mainPage and createPage (the button is defined in html above). Now, whenever the button is pressed, the code within the function will be processed and toggle the splitter menu.</p>
+<p>We also add code in menuPage&#8217;s controller function which binds onclick listeners to its respective buttons within the menu. They will change the page shown in the splitter accordingly.</p>
+<p>Now pressing the menu button will open the menu, and pressing buttons within the menu we can switch pages!</p>
+</div>
+<div class="section" id="challenge-1-creating-about-page">
+<h2>Challenge 1: Creating About Page<a class="headerlink" href="#challenge-1-creating-about-page" title="Permalink to this headline">¶</a></h2>
+<p>Try to use the method you have learned so far to make an about.html page on your own.</p>
+</div>
 </div>
 
 

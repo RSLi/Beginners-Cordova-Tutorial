@@ -93,7 +93,7 @@ To sum up, the conceptual hierarchy of the tags/views is as follows: ::
 
 Pages
 =====
-In the conceptual view hierarchy above, we notice that there are 5 "pages". Excluding body.html which is a "page" used to contain other "pages", we have 4 "pages" at the lowest level of the hierarchy. These 4 low-level pages neeed to be defined in <one-page></ons-page> tags, and we put them respectively in 4 different html files for the sake of readability (it's possible to put everything in one html file but it's hard to read and can cause tremendous confusion)
+In the conceptual view hierarchy above, we notice that there are 5 "pages". Excluding body.html which is a "page" used to contain other "pages", we have 4 "pages" at the lowest level of the hierarchy. These 4 low-level pages need to be defined in <one-page></ons-page> tags, and we put them respectively in 4 different html files for the sake of readability (it's possible to put everything in one html file but it's hard to read and can cause tremendous confusion)
 
 Each ons-page has an id attribute, these are important 'page.id' that will be used in our JavaScript code. Here, we name them with camelCase, as in the following code snippets:
 
