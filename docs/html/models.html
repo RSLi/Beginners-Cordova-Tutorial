@@ -86,7 +86,11 @@
 <li class="toctree-l1"><a class="reference internal" href="setup.html">Environment Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="structure.html">Designing the Structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="navigation.html">Navigation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Models</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-s-model">What&#8217;s Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#models-js-implementation">models.js implementation</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="views.html">Views</a></li>
 <li class="toctree-l1"><a class="reference internal" href="controllers.html">Controllers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="testing.html">Testing in Browser</a></li>
@@ -135,6 +139,59 @@
             
   <div class="section" id="models">
 <h1>Models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-s-model">
+<h2>What&#8217;s Model<a class="headerlink" href="#what-s-model" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Model is a concept used widely in the renowned <a class="reference external" href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">Model-View-Controller (MVC) design pattern</a> , you don&#8217;t need to understand it fully in this tutorial, but knowing the concept can be helpful.</p>
+</div>
+<p>models.js is where we care about storing our to-do&#8217;s in the memory and providing a method to read from the memory. In this example we&#8217;ll store our data in a JSON object that can be accessed at todoApp.models.data. This data object should contain an array where we can store our todo information. We&#8217;ll also provide methods to get/create/update each todo items (which is also denoted by JSON).</p>
+</div>
+<div class="section" id="models-js-implementation">
+<h2>models.js implementation<a class="headerlink" href="#models-js-implementation" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-js"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">todoApp</span><span class="p">.</span><span class="nx">models</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;data&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;todolist&quot;</span><span class="o">:</span> <span class="p">[{</span><span class="s2">&quot;task&quot;</span><span class="o">:</span> <span class="s2">&quot;Sample Task 1&quot;</span><span class="p">,</span> <span class="s2">&quot;done&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;task&quot;</span><span class="o">:</span> <span class="s2">&quot;Sample Task 2&quot;</span><span class="p">,</span> <span class="s2">&quot;done&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">}];</span>
+    <span class="p">},</span>
+
+    <span class="s2">&quot;todo&quot;</span><span class="o">:</span> <span class="p">{</span>
+
+        <span class="s2">&quot;get&quot;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">todoApp</span><span class="p">.</span><span class="nx">models</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">todolist</span><span class="p">[</span><span class="nx">id</span><span class="p">];</span>
+        <span class="p">},</span>
+
+        <span class="s2">&quot;add&quot;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">task</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">todoApp</span><span class="p">.</span><span class="nx">models</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">todolist</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="s2">&quot;task&quot;</span><span class="o">:</span> <span class="nx">task</span><span class="p">,</span> <span class="s2">&quot;done&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">});</span>
+        <span class="p">},</span>
+
+        <span class="s2">&quot;end&quot;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">todoApp</span><span class="p">.</span><span class="nx">models</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">todolist</span><span class="p">[</span><span class="nx">id</span><span class="p">].</span><span class="nx">done</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>With the code above, we can store a new todo task by calling something like todoApp.models.todo.add(&#8220;Do homework&#8221;); And &#8220;Do homework&#8221; will be stored at the end of the todolist. In the next section we&#8217;ll talk about how to actually display the list.</p>
+</div>
 </div>
 
 

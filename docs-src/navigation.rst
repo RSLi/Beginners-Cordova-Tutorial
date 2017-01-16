@@ -29,7 +29,7 @@ Within the toolbar, three <div> elements with class attribute specifies their po
 
 .. note::
 
-    If you want to change the icon ion-navicon(on iOS) or md-menu(on Android) to something else, you can search on `ionicons (iOS) <http://ionicons.com/>`_ or `Material Design Iconic Font (Android) <https://zavoloklom.github.io/material-design-iconic-font/cheatsheet.html>`_ , both icon sets are included with onsenui by default.
+    If you want to change the icon ion-navicon(on iOS) or md-menu(on Android) to something else, you can search on `ionicons (iOS) <http://ionicons.com/>`_ or `Material Design Iconic Font (Android) <https://zavoloklom.github.io/material-design-iconic-font/cheatsheet.html>`_ , both icon sets are included within onsenui by default.
 
 
 **history.html** is another page that can be accessed from the splitter menu, thus it is quite similar.
