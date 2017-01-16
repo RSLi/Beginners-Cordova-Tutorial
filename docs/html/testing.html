@@ -1,0 +1,242 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Testing in Browser &mdash; Beginners-cordova-tutorial 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Beginners-cordova-tutorial 0.1 documentation" href="index.html"/>
+        <link rel="next" title="Deploy on Your Phone" href="deployment.html"/>
+        <link rel="prev" title="Controllers" href="controllers.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Beginners-cordova-tutorial
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Project Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Environment Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure.html">Designing the Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="navigation.html">Navigation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="views.html">Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controllers.html">Controllers</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Testing in Browser</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#why-test-in-browser">Why Test in Browser?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python-http-server">Python HTTP Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ripple-emulator">Ripple Emulator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deployment.html">Deploy on Your Phone</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Beginners-cordova-tutorial</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Testing in Browser</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/testing.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="testing-in-browser">
+<h1>Testing in Browser<a class="headerlink" href="#testing-in-browser" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="why-test-in-browser">
+<span id="label-test"></span><h2>Why Test in Browser?<a class="headerlink" href="#why-test-in-browser" title="Permalink to this headline">¶</a></h2>
+<p>You can definitely test by entering &#8216;cordova run&#8217;, but testing the app on real device or Android emmulator might be too slow or inefficient in many occasions. And if you want to test the UI on iOS while you don&#8217;t have an iOS device or environment, testing in the browser is a great alternative.</p>
+</div>
+<div class="section" id="python-http-server">
+<h2>Python HTTP Server<a class="headerlink" href="#python-http-server" title="Permalink to this headline">¶</a></h2>
+<p>The essence of Cordova is serving the web app locally on a mobile device. In other words, Cordova acts like a server. In order to test your app in browser without being compiled by Cordova, you need to serve it with a server. If you don&#8217;t have a server environment on your device already, using a temporary lightweight python HTTP server is a good choice.</p>
+<p>If you don&#8217;t have python, <a class="reference external" href="https://www.python.org/downloads/">download python 3 here</a></p>
+<p>Now cd to the www directory</p>
+<p>If you are using Python 2 (which by default comes with Mac OSX):</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>python -m SimpleHTTPServer 8000
+</pre></div>
+</div>
+<p>If you are using Python 3:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>python -m http.server
+</pre></div>
+</div>
+<p>When you want to quit the server, type ctrl+c together in your command line window. Now please keep the server running.</p>
+<p>Open your browser (for the following tools to work, please use Chrome), go to page &#8216;<a class="reference external" href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a>&#8216;</p>
+</div>
+<div class="section" id="ripple-emulator">
+<h2>Ripple Emulator<a class="headerlink" href="#ripple-emulator" title="Permalink to this headline">¶</a></h2>
+<p>There&#8217;s a Google Chrome extension for testing Cordova apps called <a class="reference external" href="https://chrome.google.com/webstore/detail/ripple-emulator-beta/geelfhphabnejjhdalkjhgipohgpdnoc?utm_source=chrome-ntp-icon">Ripple Emulator</a></p>
+<p>Click the link in Chrome to install it, then go to <a class="reference external" href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a> when your server is running. Find the Icon for Ripple Emulator in the tool bar, click it and enable it. Now you should see your app running in the emulator window.</p>
+<p>Right click the browser screen area and choose &#8216;inspect&#8217;, you can see a console with error messages (Note there are some errors with the emulator itself. As long as the error is not pointing to your own file then don&#8217;t worry). When you encounter errors, the console might help you identify the file and line number that contains the error.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="deployment.html" class="btn btn-neutral float-right" title="Deploy on Your Phone" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="controllers.html" class="btn btn-neutral" title="Controllers" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Siwei &#34;Robert&#34; Li.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

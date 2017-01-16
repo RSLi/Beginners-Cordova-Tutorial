@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Designing the Structure &mdash; Beginners-cordova-tutorial 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Beginners-cordova-tutorial 0.1 documentation" href="index.html"/>
+        <link rel="next" title="Navigation" href="navigation.html"/>
+        <link rel="prev" title="Environment Setup" href="setup.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Beginners-cordova-tutorial
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Project Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Environment Setup</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Designing the Structure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#directory-structure">Directory Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#index-html">index.html</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#app-js">app.js</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#controllers-html">controllers.html</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="navigation.html">Navigation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="views.html">Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controllers.html">Controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing in Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment.html">Deploy on Your Phone</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Beginners-cordova-tutorial</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Designing the Structure</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/structure.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="designing-the-structure">
+<h1>Designing the Structure<a class="headerlink" href="#designing-the-structure" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="directory-structure">
+<h2>Directory Structure<a class="headerlink" href="#directory-structure" title="Permalink to this headline">¶</a></h2>
+<p>Again, make sure you know how to create files and folders with you text editor/IDE, if not, see <a class="reference internal" href="setup.html#label-ide"><span class="std std-ref">IDE/Text Editors</span></a>.</p>
+<p>Now we have the following directory structure</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">www</span><span class="o">/</span>
+    <span class="n">node_modules</span><span class="o">/</span>
+        <span class="o">...</span>
+</pre></div>
+</div>
+<p>Let&#8217;s create some folders and blank files so that it becomes</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">www</span><span class="o">/</span>
+    <span class="n">node_modules</span><span class="o">/</span>
+        <span class="o">...</span>
+    <span class="n">html</span><span class="o">/</span>
+        <span class="n">main</span><span class="o">.</span><span class="n">html</span>
+        <span class="n">menu</span><span class="o">.</span><span class="n">html</span>
+        <span class="n">create</span><span class="o">.</span><span class="n">html</span>
+        <span class="n">history</span><span class="o">.</span><span class="n">html</span>
+    <span class="n">js</span><span class="o">/</span>
+        <span class="n">app</span><span class="o">.</span><span class="n">js</span>
+        <span class="n">controllers</span><span class="o">.</span><span class="n">js</span>
+        <span class="n">models</span><span class="o">.</span><span class="n">js</span>
+        <span class="n">views</span><span class="o">.</span><span class="n">js</span>
+    <span class="n">index</span><span class="o">.</span><span class="n">html</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="index-html">
+<h2>index.html<a class="headerlink" href="#index-html" title="Permalink to this headline">¶</a></h2>
+<p>index.html is the standard place where a web app starts. By default, one html file is a web page, but hybrid apps are mostly <a class="reference external" href="https://en.wikipedia.org/wiki/Single-page_application">Single-Page Applicaitons (SPA)</a>, so what we will do is to link content of other html files into this index.html to be displayed when needed. Simply put, index.html is the hub of all other files in this web app.</p>
+<p>Here&#8217;s the code for index.html:</p>
+<div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>My Todo List<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;node_modules/onsenui/js/onsenui.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;node_modules/moment/moment.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/app.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/controllers.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/models.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/views.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;node_modules/onsenui/css/onsenui.css&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;node_modules/onsenui/css/onsen-css-components.css&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">ons-navigator</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app-navigator&quot;</span> <span class="na">page</span><span class="o">=</span><span class="s">&quot;body.html&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">ons-navigator</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">ons-template</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;body.html&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ons-splitter</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app-splitter&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">ons-splitter-side</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;menu&quot;</span> <span class="na">page</span><span class="o">=</span><span class="s">&quot;html/menu.html&quot;</span> <span class="na">swipeable</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;240px&quot;</span> <span class="na">collapse</span> <span class="na">swipe-target-width</span><span class="o">=</span><span class="s">&quot;50px&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">ons-splitter-side</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">ons-splitter-content</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;content&quot;</span> <span class="na">page</span><span class="o">=</span><span class="s">&quot;html/main.html&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">ons-splitter-content</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ons-splitter</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ons-template</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>The html file consists of <strong>tags</strong> enclosed in &lt;&gt;&lt;/&gt;, including &lt;head&gt;&lt;/head&gt; and &lt;body&gt;&lt;/body&gt; sections, where the &lt;head&gt; contains links to other files while the &lt;body&gt; contains the actual content of the page.</p>
+<p>Each pair of tags represents a <strong>DOM Object</strong> (Document Object Model), and has <strong>attributes</strong> such as id, page, href etc.</p>
+<p>In the &lt;head&gt;&lt;/head&gt; section we have used various tags to link all the files that we&#8217;ll need for this app.</p>
+<p>&lt;ons-navigator&gt; is a container for the screens of the app. Each screen is like a card and the &lt;ons-navigator&gt; is like a deck. See <a class="reference external" href="https://onsen.io/v2/docs/js/ons-navigator.html">ons-navigator</a> for the effect and detail</p>
+<p>&lt;ons-navigator&gt; specifies the attribute page=&#8221;body.html&#8221; so that the &lt;ons-template&gt; (by default hidden) with the id=&#8221;body.html&#8221; will be the default screen. The content of this &lt;ons-template&gt; consists of a &lt;ons-splitter&gt; which has a splitter menu on the left that can switch pages within the content block. See <a class="reference external" href="https://onsen.io/v2/docs/js/ons-splitter.html">ons-splitter</a> for the effect and detail usage.</p>
+<p>As the &lt;ons-splitter-content&gt; has specified, the default page within the splitter will be main.html, which we will use to display the to-do list itself.</p>
+</div>
+<div class="section" id="app-js">
+<h2>app.js<a class="headerlink" href="#app-js" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-js"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">todoApp</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="nx">ons</span><span class="p">.</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;init&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">page</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">;</span> <span class="c1">// target of the init event is a page</span>
+        <span class="nx">todoApp</span><span class="p">.</span><span class="nx">controllers</span><span class="p">[</span><span class="nx">page</span><span class="p">.</span><span class="nx">id</span><span class="p">](</span><span class="nx">page</span><span class="p">);</span> <span class="c1">// name all controllers with their respective page id</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</td></tr></table></div>
+<p>This is the starting point of all our javascript. The window scope helps initialize a global variable that will be available for storing and retrieving all app data. window.todoApp = {} defines this empty object and everything else in our app should exist as member objects or functions of this todoApp object.</p>
+<p>ons.ready() is the entrance of our entire app. It adds an listener to the &#8216;init&#8217; event which will be triggered at the start of the app as well as every page change detected by ons-navigator and ons-splitter. It gets the name of the page that is being triggered and calls the page&#8217;s respective controller, which we will write in the html/controllers.html file.</p>
+</div>
+<div class="section" id="controllers-html">
+<h2>controllers.html<a class="headerlink" href="#controllers-html" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-js"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">todoApp</span><span class="p">.</span><span class="nx">controllers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;menuPage&quot;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">page</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="p">},</span>
+
+    <span class="s2">&quot;mainPage&quot;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">page</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="p">},</span>
+
+    <span class="s2">&quot;historyPage&quot;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">page</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="p">},</span>
+
+    <span class="s2">&quot;createPage&quot;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">page</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+
+<span class="p">};</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="navigation.html" class="btn btn-neutral float-right" title="Navigation" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="setup.html" class="btn btn-neutral" title="Environment Setup" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Siwei &#34;Robert&#34; Li.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

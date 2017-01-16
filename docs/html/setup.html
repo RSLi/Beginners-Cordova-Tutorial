@@ -1,0 +1,334 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Environment Setup &mdash; Beginners-cordova-tutorial 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Beginners-cordova-tutorial 0.1 documentation" href="index.html"/>
+        <link rel="next" title="Designing the Structure" href="structure.html"/>
+        <link rel="prev" title="Project Introduction" href="intro.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Beginners-cordova-tutorial
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Project Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Environment Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#install-node-js-npm">Install node.js/npm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-cordova-cli">Install Cordova CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#useful-command-line">Useful Command line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-root-directory">Create Root Directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optional-for-git-users">(Optional) For Git Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-onsen-ui">Install Onsen UI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#label-ide">IDE/Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optional-testing">(Optional) Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#delete-sample-files">Delete Sample Files</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="structure.html">Designing the Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="navigation.html">Navigation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="views.html">Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controllers.html">Controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing in Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment.html">Deploy on Your Phone</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Beginners-cordova-tutorial</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Environment Setup</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/setup.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="environment-setup">
+<h1>Environment Setup<a class="headerlink" href="#environment-setup" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="install-node-js-npm">
+<h2>Install node.js/npm<a class="headerlink" href="#install-node-js-npm" title="Permalink to this headline">¶</a></h2>
+<p>In order to install Cordova Command Line Interface (CLI) we will need use the npm package manager, which comes with the node.js distribution. Follow this link to <a class="reference external" href="https://nodejs.org/en/download/">Install Node</a>.</p>
+</div>
+<div class="section" id="install-cordova-cli">
+<h2>Install Cordova CLI<a class="headerlink" href="#install-cordova-cli" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">When using npm, there might be a lot of warning messages about deprecated packages. Those warnings are for the developer of Cordova and OnsenUI, so you don&#8217;t need to worry about them.</p>
+</div>
+<p>After you have installed node:</p>
+<p>MacOSX/Linux Users:
+- Open up terminal (make sure you are on the admin&#8217;s account)
+- Enter the following command</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>sudo npm install -g cordova
+</pre></div>
+</div>
+<p>Windows Users:
+- Open up Command Prompt (Go to Start -&gt; Search -&gt; Enter cmd)
+- Enter the following command</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>C:<span class="se">\&gt;</span>npm install -g cordova
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="https://cordova.apache.org/docs/en/latest/guide/overview/index.html">The Official tutorial of Cordova</a>.</p>
+</div>
+</div>
+<div class="section" id="useful-command-line">
+<h2>Useful Command line<a class="headerlink" href="#useful-command-line" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl class="first docutils">
+<dt>On OSX/linux shell:</dt>
+<dd><ul class="first last simple">
+<li>Change Working Directory: <a class="reference external" href="http://linuxcommand.org/lts0020.php#cd">cd</a></li>
+<li>List files and folders in the working directory: <a class="reference external" href="http://linuxcommand.org/lts0030.php#ls">ls</a></li>
+<li>Make Directory: <a class="reference external" href="http://linuxcommand.org/lts0050.php#mkdir">mkdir</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>And their Windows equivalents:</dt>
+<dd><ul class="first last simple">
+<li>Change Working Directory: <a class="reference external" href="https://technet.microsoft.com/en-us/library/cc731237(v=ws.11).aspx">cd(windows)</a></li>
+<li>List files and folders in the working directory: <a class="reference external" href="https://technet.microsoft.com/en-us/library/cc755121(v=ws.11).aspx">dir</a></li>
+<li>Make Directory: <a class="reference external" href="https://technet.microsoft.com/en-us/library/cc754711(v=ws.11).aspx">md</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">Tip: If you want to navigate to the parent folder of the current working directory, use &#8216;cd ..&#8217;</p>
+</div>
+</div>
+<div class="section" id="create-root-directory">
+<h2>Create Root Directory<a class="headerlink" href="#create-root-directory" title="Permalink to this headline">¶</a></h2>
+<p>MacOSX/Linux Users:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~ <span class="c1"># change working directory to the user&#39;s home directory</span>
+cordova create my-todo-app com.example.todo MyTodo <span class="c1"># Create the cordova project folder my-todo-app</span>
+<span class="nb">cd</span> my-todo-app <span class="c1"># change working directory to my-todo-app</span>
+</pre></div>
+</div>
+<p>Windows Users (When you open command prompt/cmd you are by default in your user folder):</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>cordova create my-todo-app com.example.todo MyTodo <span class="c1"># Create the cordova project folder my-todo-app</span>
+<span class="nb">cd</span> my-todo-app
+</pre></div>
+</div>
+<p>The code above creates a folder named my-todo-app at the home directory of the user and then changes working directory to this folder. Now we have a root directory for our project!</p>
+</div>
+<div class="section" id="optional-for-git-users">
+<h2>(Optional) For Git Users<a class="headerlink" href="#optional-for-git-users" title="Permalink to this headline">¶</a></h2>
+<p>If you are already using Git for version control, consider adding the following to your .gitignore file (which should be placed in the root directory of your repo) to better support Cordova. For more information about .gitignore, see <a class="reference external" href="https://help.github.com/articles/ignoring-files/#create-a-local-gitignore">Here</a>.</p>
+<div class="highlight-guess"><div class="highlight"><pre><span></span># Cordova
+platforms
+plugins
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-onsen-ui">
+<h2>Install Onsen UI<a class="headerlink" href="#install-onsen-ui" title="Permalink to this headline">¶</a></h2>
+<p>After the steps above, now we should be in your working directory called &#8216;my-todo-app&#8217;.</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span><span class="nb">cd</span> www <span class="c1"># go to the www folder which is the root for our web app</span>
+npm install onsenui <span class="c1"># download onsenui package</span>
+</pre></div>
+</div>
+<p>Use your file explore/finder, search my-todo-app and see what&#8217;s inside!</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="https://onsen.io/getting-started/#npm">Official tutorial of Onsen UI</a></p>
+</div>
+</div>
+<div class="section" id="label-ide">
+<span id="ide-text-editor"></span><h2>IDE/Text Editor<a class="headerlink" href="#label-ide" title="Permalink to this headline">¶</a></h2>
+<p>If you already have an IDE or text editor that you are familiar with, then stick with that. If not, I recommend the open-source and free <a class="reference external" href="https://atom.io/">Atom Text Editor</a>.</p>
+<p>Try to open the my-todo-app/www folder in your IDE/Text Editor. If your text editor doesn&#8217;t have a tree view where you can create or delete files in the working directory, I highly recommend you switch to Atom to simplify this issue, as we will need to create and delete a lot of things.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="https://scotch.io/bar-talk/best-of-atom-features-plugins-acting-like-sublime-text">Customize your Atom</a></p>
+</div>
+</div>
+<div class="section" id="optional-testing">
+<h2>(Optional) Testing<a class="headerlink" href="#optional-testing" title="Permalink to this headline">¶</a></h2>
+<p>At this time you might be excited enough to test whether your app works. If you don&#8217;t want to wait till the end to test your project, or if you want to test your app step by step through your development, read <a class="reference internal" href="testing.html#label-test"><span class="std std-ref">Testing in Browser</span></a>.</p>
+</div>
+<div class="section" id="delete-sample-files">
+<h2>Delete Sample Files<a class="headerlink" href="#delete-sample-files" title="Permalink to this headline">¶</a></h2>
+<p>As you probably have already noticed, there are a couple of sample files created by cordova in the www directory.</p>
+<p>Delete everything other than the node_modules folder (which contains the onsenui library we just downloaded).</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="structure.html" class="btn btn-neutral float-right" title="Designing the Structure" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="intro.html" class="btn btn-neutral" title="Project Introduction" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Siwei &#34;Robert&#34; Li.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
