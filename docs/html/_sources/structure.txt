@@ -44,7 +44,6 @@ Here's the code for index.html:
     <meta charset="UTF-8">
     <title>My Todo List</title>
     <script src="node_modules/onsenui/js/onsenui.js"></script>
-    <script src="node_modules/moment/moment.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/models.js"></script>
