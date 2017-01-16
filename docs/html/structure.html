@@ -87,8 +87,11 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Designing the Structure</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#directory-structure">Directory Structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#index-html">index.html</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pages">Pages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#app-js">app.js</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#controllers-html">controllers.html</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#controllers-js">controllers.js</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#view-js">view.js</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#model-js">model.js</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="navigation.html">Navigation</a></li>
@@ -230,9 +233,51 @@
 <p>The html file consists of <strong>tags</strong> enclosed in &lt;&gt;&lt;/&gt;, including &lt;head&gt;&lt;/head&gt; and &lt;body&gt;&lt;/body&gt; sections, where the &lt;head&gt; contains links to other files while the &lt;body&gt; contains the actual content of the page.</p>
 <p>Each pair of tags represents a <strong>DOM Object</strong> (Document Object Model), and has <strong>attributes</strong> such as id, page, href etc.</p>
 <p>In the &lt;head&gt;&lt;/head&gt; section we have used various tags to link all the files that we&#8217;ll need for this app.</p>
-<p>&lt;ons-navigator&gt; is a container for the screens of the app. Each screen is like a card and the &lt;ons-navigator&gt; is like a deck. See <a class="reference external" href="https://onsen.io/v2/docs/js/ons-navigator.html">ons-navigator</a> for the effect and detail</p>
-<p>&lt;ons-navigator&gt; specifies the attribute page=&#8221;body.html&#8221; so that the &lt;ons-template&gt; (by default hidden) with the id=&#8221;body.html&#8221; will be the default screen. The content of this &lt;ons-template&gt; consists of a &lt;ons-splitter&gt; which has a splitter menu on the left that can switch pages within the content block. See <a class="reference external" href="https://onsen.io/v2/docs/js/ons-splitter.html">ons-splitter</a> for the effect and detail usage.</p>
+<p>&lt;ons-navigator&gt; is a container for the pages of the app. Each page is like a card and the &lt;ons-navigator&gt; is like a deck. See <a class="reference external" href="https://onsen.io/v2/docs/js/ons-navigator.html">ons-navigator</a> for the effect and detail. Note that each page can contain other pages and containers of pages to create different screens.</p>
+<p>&lt;ons-navigator&gt; specifies the attribute page=&#8221;body.html&#8221; so that the &lt;ons-template&gt; (by default hidden) with the id=&#8221;body.html&#8221; will be the default page (this is not an actual html file, but just an id specifying that it is html code inside. page=&#8221;...&#8221; accepts either path to actual html files or ons-template&#8217;s id). The content of this &lt;ons-template&gt; consists of a &lt;ons-splitter&gt; which has a splitter menu on the left that can switch pages within the content block. See <a class="reference external" href="https://onsen.io/v2/docs/js/ons-splitter.html">ons-splitter</a> for the effect and detail usage.</p>
 <p>As the &lt;ons-splitter-content&gt; has specified, the default page within the splitter will be main.html, which we will use to display the to-do list itself.</p>
+<p>To sum up, the conceptual hierarchy of the tags/views is as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Window</span> <span class="p">(</span><span class="n">exist</span> <span class="n">by</span> <span class="n">default</span><span class="p">,</span> <span class="n">corresponding</span> <span class="n">to</span> <span class="n">the</span> <span class="n">browser</span> <span class="n">window</span> <span class="ow">or</span> <span class="n">App</span> <span class="n">window</span><span class="p">)</span>
+    <span class="o">-&gt;</span> <span class="n">navigator</span> <span class="p">(</span><span class="n">only</span> <span class="n">one</span><span class="p">,</span> <span class="n">everything</span> <span class="n">we</span> <span class="n">make</span> <span class="ow">is</span> <span class="ow">in</span> <span class="n">it</span><span class="p">)</span>
+        <span class="o">-&gt;</span> <span class="n">page</span><span class="p">:</span> <span class="n">body</span><span class="o">.</span><span class="n">html</span>
+            <span class="o">-&gt;</span> <span class="n">splitter</span>
+                <span class="o">-&gt;</span> <span class="n">splitter</span><span class="o">-</span><span class="n">menu</span>
+                    <span class="o">-&gt;</span> <span class="n">page</span><span class="p">:</span> <span class="n">menu</span><span class="o">.</span><span class="n">html</span>
+                <span class="o">-&gt;</span> <span class="n">splitter</span><span class="o">-</span><span class="n">content</span>
+                    <span class="o">-&gt;</span> <span class="n">page</span><span class="p">:</span> <span class="n">main</span><span class="o">.</span><span class="n">html</span>
+                    <span class="o">-&gt;</span> <span class="n">page</span><span class="p">:</span> <span class="n">history</span><span class="o">.</span><span class="n">html</span>
+        <span class="o">-&gt;</span> <span class="n">page</span><span class="p">:</span> <span class="n">create</span><span class="o">.</span><span class="n">html</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pages">
+<h2>Pages<a class="headerlink" href="#pages" title="Permalink to this headline">¶</a></h2>
+<p>In the conceptual view hierarchy above, we notice that there are 5 &#8220;pages&#8221;. Excluding body.html which is a &#8220;page&#8221; used to contain other &#8220;pages&#8221;, we have 4 &#8220;pages&#8221; at the lowest level of the hierarchy. These 4 low-level pages neeed to be defined in &lt;one-page&gt;&lt;/ons-page&gt; tags, and we put them respectively in 4 different html files for the sake of readability (it&#8217;s possible to put everything in one html file but it&#8217;s hard to read and can cause tremendous confusion)</p>
+<p>Each ons-page has an id attribute, these are important &#8216;page.id&#8217; that will be used in our JavaScript code. Here, we name them with camelCase, as in the following code snippets:</p>
+<p>main.html</p>
+<div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ons-page</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mainPage&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ons-page</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>menu.html</p>
+<div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ons-page</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;menuPage&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ons-page</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>history.html</p>
+<div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ons-page</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;historyPage&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ons-page</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>create.html</p>
+<div class="highlight-html"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ons-page</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;createPage&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ons-page</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
 </div>
 <div class="section" id="app-js">
 <h2>app.js<a class="headerlink" href="#app-js" title="Permalink to this headline">¶</a></h2>
@@ -254,10 +299,10 @@
 </pre></div>
 </td></tr></table></div>
 <p>This is the starting point of all our javascript. The window scope helps initialize a global variable that will be available for storing and retrieving all app data. window.todoApp = {} defines this empty object and everything else in our app should exist as member objects or functions of this todoApp object.</p>
-<p>ons.ready() is the entrance of our entire app. It adds an listener to the &#8216;init&#8217; event which will be triggered at the start of the app as well as every page change detected by ons-navigator and ons-splitter. It gets the name of the page that is being triggered and calls the page&#8217;s respective controller, which we will write in the html/controllers.html file.</p>
+<p>ons.ready() is the entrance of our entire app. It adds an listener to the &#8216;init&#8217; event which will be triggered at the start of the app as well as every page change detected by ons-navigator and ons-splitter. It gets the name of the page that is being triggered and calls the page&#8217;s respective controller, which we will write in the html/controllers.js file.</p>
 </div>
-<div class="section" id="controllers-html">
-<h2>controllers.html<a class="headerlink" href="#controllers-html" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="controllers-js">
+<h2>controllers.js<a class="headerlink" href="#controllers-js" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-js"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -295,6 +340,95 @@
 <span class="p">};</span>
 </pre></div>
 </td></tr></table></div>
+<p>To understand this file, we need to introduce <a class="reference external" href="http://www.w3schools.com/js/js_json_intro.asp">JSON (Javascript Object Notation)</a> . Essentially, a JSON/JavaScript object consists of key-value pairs such as {&#8220;name&#8221;:&#8221;John Doe&#8221;, &#8220;age&#8221;:&#8221;18&#8221;}. The key (as in &#8220;name&#8221;, &#8220;age&#8221;) must be a string. The value here can be any data type, including number, string, function or even another JSON/object.</p>
+<p>This file contains only one statement in the global scope, which is declaring a &#8220;key&#8221; for the object todoApp called &#8220;controllers&#8221; (its value can be accessed as todoApp.controllers), and then assigning an object to the attribute. The object assigned to controllers consists of 4 keys corresponding to the respective page.id in our 4 &lt;ons-page&gt;. Those 4 keys are respectively paired with a function that we will define later.</p>
+<p>And as mentioned in app.js, whenever there&#8217;s a page change, the corresponding controller function of the new page being displayed will be triggered. We will use these functions to help us define the functionalities of our buttons.</p>
+</div>
+<div class="section" id="view-js">
+<h2>view.js<a class="headerlink" href="#view-js" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-js"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">todoApp</span><span class="p">.</span><span class="nx">views</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;menuPage&quot;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">page</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="p">},</span>
+
+    <span class="s2">&quot;mainPage&quot;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">page</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="p">},</span>
+
+    <span class="s2">&quot;historyPage&quot;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">page</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="p">},</span>
+
+    <span class="s2">&quot;createPage&quot;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">page</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+
+<span class="p">};</span>
+</pre></div>
+</td></tr></table></div>
+<p>Similar to controllers, but renders or refreshes the view of the page everytime you call the corresponding view function.</p>
+</div>
+<div class="section" id="model-js">
+<h2>model.js<a class="headerlink" href="#model-js" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-js"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">todoApp</span><span class="p">.</span><span class="nx">models</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;data&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;todolist&quot;</span><span class="o">:</span> <span class="p">[{</span><span class="s2">&quot;task&quot;</span><span class="o">:</span> <span class="s2">&quot;Sample Task 1&quot;</span><span class="p">,</span> <span class="s2">&quot;done&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;task&quot;</span><span class="o">:</span> <span class="s2">&quot;Sample Task 2&quot;</span><span class="p">,</span> <span class="s2">&quot;done&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">}];</span>
+    <span class="p">},</span>
+
+    <span class="s2">&quot;todo&quot;</span><span class="o">:</span> <span class="p">{</span>
+
+        <span class="s2">&quot;get&quot;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="p">},</span>
+
+        <span class="s2">&quot;add&quot;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="p">},</span>
+
+        <span class="s2">&quot;end&quot;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Models are all about data and storage. We will talk about this in detail later.</p>
 </div>
 </div>
 
