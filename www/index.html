@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Todo List</title>
+<script src="node_modules/onsenui/js/onsenui.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/models.js"></script>
+<script src="js/views.js"></script>
+<link rel="stylesheet" href="node_modules/onsenui/css/onsenui.css">
+<link rel="stylesheet" href="node_modules/onsenui/css/onsen-css-components.css">
+</head>
+
+<body>
+<ons-navigator id="app-navigator" page="body.html"></ons-navigator>
+<ons-template id="body.html">
+    <ons-splitter id="app-splitter">
+        <ons-splitter-side id="menu" page="html/menu.html" swipeable width="240px" collapse swipe-target-width="50px">
+        </ons-splitter-side>
+        <ons-splitter-content id="content" page="html/main.html">
+        </ons-splitter-content>
+    </ons-splitter>
+</ons-template>
+</body>
+</html>
