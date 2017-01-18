@@ -10,4 +10,4 @@ The website is written in Sphinx/reStructuredText.
 
 The sample source code for the complete app is in the www/ directory.
 
-If you detected an error, post an issue or contact __robertsli@163.com__. I greatly appreciate it. :smiley:
+If you detect an error, post an issue or contact __robertsli@163.com__. I greatly appreciate it. :smiley:
