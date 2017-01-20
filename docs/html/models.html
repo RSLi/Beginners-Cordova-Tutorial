@@ -89,6 +89,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Models</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#what-s-model">What&#8217;s Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#models-js-implementation">models.js implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#challenge-2-enable-long-term-storage">Challenge 2: Enable Long-term Storage</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="views.html">Views</a></li>
@@ -191,6 +192,10 @@
 </pre></div>
 </td></tr></table></div>
 <p>With the code above, we can store a new todo task by calling something like todoApp.models.todo.add(&#8220;Do homework&#8221;); And &#8220;Do homework&#8221; will be stored at the end of the todolist. In the next section we&#8217;ll talk about how to actually display the list.</p>
+</div>
+<div class="section" id="challenge-2-enable-long-term-storage">
+<h2>Challenge 2: Enable Long-term Storage<a class="headerlink" href="#challenge-2-enable-long-term-storage" title="Permalink to this headline">¶</a></h2>
+<p>This is a hard challenge that you can come back to work on after you&#8217;ve finished the tutorial. Currently, when you add your todo tasks, they will only be available in the RAM. And when the app is closed, the data will be reset. If you want to store the data in the long term, you will need to learn about <a class="reference external" href="https://cordova.apache.org/docs/en/latest/cordova/storage/storage.html">Cordova Storage</a>.</p>
 </div>
 </div>
 

@@ -94,6 +94,6 @@ Again, we add the functionality of the button in the controller:
 This will prompt the user to enter a new task with a notification box.
 
 
-Challenge 2: Seperate Page for Creating Task
+Challenge 3: Seperate Page for Creating Task
 ============================================
 You probably remember that we've created a create.html page. Try to implement this page to replace ons.notification.prompt that we've used in the above example. You will probably need to look up `ons-navigator <https://onsen.io/v2/docs/js/ons-navigator.html>`_.
