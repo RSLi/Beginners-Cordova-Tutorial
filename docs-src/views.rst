@@ -93,6 +93,7 @@ Again, we add the functionality of the button in the controller:
 
 This will prompt the user to enter a new task with a notification box.
 
+.. _label-challenge-3:
 
 Challenge 3: Seperate Page for Creating Task
 ============================================

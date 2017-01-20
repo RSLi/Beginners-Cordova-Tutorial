@@ -125,6 +125,8 @@ We also add code in menuPage's controller function which binds onclick listeners
 
 Now pressing the menu button will open the menu, and pressing buttons within the menu we can switch pages!
 
+.. _label-challenge-1:
+
 Challenge 1: Creating About Page
 ================================
 Try to use the method you have learned so far to make an about.html page on your own.

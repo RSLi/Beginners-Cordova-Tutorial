@@ -17,3 +17,11 @@ Distributing your App via App Store and Google Play
 
 - `App Store <https://developer.apple.com/app-store/submissions/>`_
 - `Google Play <https://developer.android.com/distribute/googleplay/developer-console.html>`_
+
+Challenges
+==========
+There are many parts of the app that could be improved upon. Here's a list of those challenges that appear in the tutorial. Work on them and try new ways to make your app even more fantastic!
+
+- :ref:`Challenge 1:  Creating About Page <label-challenge-1>`
+- :ref:`Challenge 2:  Long-term Storage <label-challenge-2>`
+- :ref:`Challenge 3:  Separate createPage <label-challenge-3>`
