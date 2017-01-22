@@ -213,7 +213,7 @@ model.js
 
     todoApp.models = {
         "data": {
-            "todolist": [{"task": "Sample Task 1", "done": false}, {"task": "Sample Task 2", "done": false}];
+            "todolist": [{"task": "Sample Task 1", "done": false}, {"task": "Sample Task 2", "done": false}]
         },
 
         "todo": {
